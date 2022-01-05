@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<div th:replace="fragments :: head"></div>
+		<title>Departments</title>
+	</head>
+	<body>
+		<h1>Departments</h1>
+		<ul>
+			<li th:each="department : ${departments}" th:text= ${department.name}></li> 
+		</ul>
+		<div th:replace="fragments :: scripts"></div>
+	</body>
+
+</html>
