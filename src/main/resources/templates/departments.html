@@ -5,10 +5,34 @@
 		<title>Departments</title>
 	</head>
 	<body>
-		<h1>Departments</h1>
-		<ul>
-			<li th:each="department : ${departments}" th:text= ${department.name}></li> 
-		</ul>
+		<div class="container">
+			<h1 class="text-center text-secondary fs-1">Departments</h1 >
+		
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th class ="text-secondary fs-3"scope="col">Name</th >
+					<th class ="text-secondary fs-3"scope="col">Address</th >
+					<th class ="text-secondary fs-3"scope="col">Phone</th >
+					<th class ="text-secondary fs-3"scope="col">Email</th >
+					<th class ="text-secondary fs-3"scope="col">Website</th >
+					<th class ="text-secondary fs-3"scope="col">Head of department</th >
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr th:each="department : ${departments}">
+					<th th:text= ${department.name}></th >
+					<th th:text= ${department.address}></th >
+					<th th:text= ${department.phone}></th >
+					<th th:text= ${department.email}></th >
+					<th th:text= ${department.website}></th >
+					<th th:text= ${department.headOfDepartment}></th >
+				</trth:each="department : ${departments}">
+			</tbody>
+		</table>
+		</div>
 		<div th:replace="fragments :: scripts"></div>
 	</body>
 
