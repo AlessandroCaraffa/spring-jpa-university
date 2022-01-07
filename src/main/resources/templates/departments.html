@@ -18,18 +18,22 @@
 					<th class ="text-secondary fs-3"scope="col">Email</th >
 					<th class ="text-secondary fs-3"scope="col">Website</th >
 					<th class ="text-secondary fs-3"scope="col">Head of department</th >
+					
 				</tr>
 				
 			</thead>
 			<tbody>
-				<tr th:each="department : ${departments}">
-					<td class="bg-info"th:text= ${department.name}></td>
-					<td class="table-info" th:text= ${department.address}></td >
-					<td th:text= ${department.phone}></td>
-					<td th:text= ${department.email}></td>
-					<td th:text= ${department.website}></td>
-					<td th:text= ${department.headOfDepartment}></td>
-				</trth:each="department : ${departments}">
+				<a >
+					<tr th:each="department : ${departments}"  data-href="@{|/degrees/${department.id}|}">
+						<td class="bg-info text-white"th:text= ${department.name}></td>
+						<td class="table-primary" th:text= ${department.address}></td >
+						<td class="bg-info text-white"th:text = ${department.phone} ></td>
+						<td class="table-primary"th:text= ${department.email}></td>
+						<td class="bg-info text-white"th:text= ${department.website}></td>
+						<td class="table-primary" th:text= ${department.headOfDepartment}></td>
+						<td class="bg-info" ><a class="btn btn-primary " th:href="@{|/degrees/${department.id}|}">Degrees list</a></td  >
+					</tr>
+				</a >
 			</tbody>
 		</table>
 		</div>

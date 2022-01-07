@@ -13,7 +13,7 @@
 			<thead>
 				<tr>
 					<th class ="text-secondary fs-3"scope="col">Name</th >
-					<th class ="text-secondary fs-3"scope="col">level</th >
+					<th class ="text-secondary fs-3"scope="col">Level</th >
 					<th class ="text-secondary fs-3"scope="col">Address</th >
 					<th class ="text-secondary fs-3"scope="col">Email</th >
 					<th class ="text-secondary fs-3"scope="col">Website</th >
@@ -23,11 +23,11 @@
 			</thead>
 			<tbody>
 				<tr th:each="degree : ${degree}">
-					<td class="bg-info"th:text= ${degree.name}></td>
-					<td class="table-info" th:text= ${degree.level}></td> 
-					<td th:text= ${degree.address}></td>
-					<td th:text= ${degree.email}></td>
-					<td th:text= ${degree.website}></td>
+					<td class="bg-info text-white"th:text= ${degree.name}></td>
+					<td  class="table-primary"th:text= ${degree.level}></td > 
+					<td class="bg-info text-white" th:text= ${degree.address}></td >
+					<td class="table-primary"th:text= ${degree.email}></td>
+					<td class="bg-info text-white"th:text= ${degree.website}></td>
 					
 				</tr>
 			</tbody>
