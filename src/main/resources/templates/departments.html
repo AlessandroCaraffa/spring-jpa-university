@@ -23,12 +23,12 @@
 			</thead>
 			<tbody>
 				<tr th:each="department : ${departments}">
-					<th th:text= ${department.name}></th >
-					<th th:text= ${department.address}></th >
-					<th th:text= ${department.phone}></th >
-					<th th:text= ${department.email}></th >
-					<th th:text= ${department.website}></th >
-					<th th:text= ${department.headOfDepartment}></th >
+					<td class="bg-info"th:text= ${department.name}></td>
+					<td class="table-info" th:text= ${department.address}></td >
+					<td th:text= ${department.phone}></td>
+					<td th:text= ${department.email}></td>
+					<td th:text= ${department.website}></td>
+					<td th:text= ${department.headOfDepartment}></td>
 				</trth:each="department : ${departments}">
 			</tbody>
 		</table>

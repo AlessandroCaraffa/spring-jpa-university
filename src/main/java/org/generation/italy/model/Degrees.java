@@ -1,26 +1,30 @@
 package org.generation.italy.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OrderBy;
-import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+
 
 @Entity
-@Table(name="Departments")
-public class Department {
-	
+public class Degrees {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@OrderBy("name")
-	private Integer id;	
+	private Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name="department_id",nullable=false)
+	private Department department;
 	
 	private String name;
+	private String level;
 	private String address;
-	private String phone;
 	private String email;
 	private String website;
 	public Integer getId() {
@@ -29,23 +33,30 @@ public class Department {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 	public String getEmail() {
 		return email;
@@ -59,13 +70,7 @@ public class Department {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	public String getHeadOfDepartment() {
-		return headOfDepartment;
-	}
-	public void setHeadOfDepartment(String headOfDepartment) {
-		this.headOfDepartment = headOfDepartment;
-	}
-	@Column (name="head_of_department")
-	private String headOfDepartment;	
-
+	
+	
 }
+

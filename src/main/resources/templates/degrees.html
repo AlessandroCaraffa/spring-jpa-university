@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<div th:replace="fragments :: head"></div>
+		<title>Degrees</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="text-center text-secondary fs-1" th:text="|${degreesId}|" ></h1 >
+		
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th class ="text-secondary fs-3"scope="col">Name</th >
+					<th class ="text-secondary fs-3"scope="col">level</th >
+					<th class ="text-secondary fs-3"scope="col">Address</th >
+					<th class ="text-secondary fs-3"scope="col">Email</th >
+					<th class ="text-secondary fs-3"scope="col">Website</th >
+					
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr th:each="degree : ${degree}">
+					<td class="bg-info"th:text= ${degree.name}></td>
+					<td class="table-info" th:text= ${degree.level}></td> 
+					<td th:text= ${degree.address}></td>
+					<td th:text= ${degree.email}></td>
+					<td th:text= ${degree.website}></td>
+					
+				</trth:each="degree : ${degree}">
+			</tbody>
+		</table>
+		</div>
+		<div th:replace="fragments :: scripts"></div>
+	</body>
+
+</html>
