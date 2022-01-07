@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="text-center text-secondary fs-1" th:text="|${degreesId}|" ></h1 >
+			<h1 class="text-center text-secondary fs-1" th:text="|${department.name}|" ></h1 >
 		
 		
 		<table class="table">
@@ -29,7 +29,7 @@
 					<td th:text= ${degree.email}></td>
 					<td th:text= ${degree.website}></td>
 					
-				</trth:each="degree : ${degree}">
+				</tr>
 			</tbody>
 		</table>
 		</div>

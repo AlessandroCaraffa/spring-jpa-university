@@ -29,10 +29,14 @@ public class DepartmentsController {
 	
 	@Autowired
 	private DegreesRepository degreeRepository;
+	
 	@GetMapping("/degrees/{id}")
 	public String degrees(Model model, @PathVariable Integer id) {
-		model.addAttribute("degree", degreeRepository.findAll());
+		
 		model.addAttribute("degreesId", id);
+		Department d = repository.getById(id);
+		model.addAttribute("department", d);
+		model.addAttribute("degree", d.getDegrees());
 		
 		
 		return "degrees";

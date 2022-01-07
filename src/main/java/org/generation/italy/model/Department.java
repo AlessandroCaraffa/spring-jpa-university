@@ -1,10 +1,15 @@
 package org.generation.italy.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
@@ -16,8 +21,15 @@ public class Department {
 	@Column(name="id")
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@OrderBy("name")
+	
 	private Integer id;	
 	
+	@OneToMany
+	@JoinColumn(name="department_id")
+	private List<Degree> degrees;
+	
+	
+
 	private String name;
 	private String address;
 	private String phone;
@@ -67,5 +79,14 @@ public class Department {
 	}
 	@Column (name="head_of_department")
 	private String headOfDepartment;	
+	
+
+	public List<Degree> getDegrees() {
+		return degrees;
+	}
+	
+	public void setDegrees(List<Degree> degrees) {
+		this.degrees = degrees;
+	}
 
 }

@@ -1,6 +1,8 @@
 package org.generation.italy.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,19 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 
 @Entity
-public class Degrees {
+@Table(name="degrees")
+public class Degree {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
 	
-	@ManyToOne
-	@JoinColumn(name="department_id",nullable=false)
-	private Department department;
+//	@ManyToOne
+//	@JoinColumn(name="department_id",nullable=false)
+//	private Department department;
 	
 	private String name;
 	private String level;
@@ -34,15 +39,17 @@ public class Degrees {
 		this.id = id;
 	}
 	
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
+	
+	
 	public String getName() {
 		return name;
 	}
+//	public Department getDepartment() {
+//		return department;
+//	}
+//	public void setDepartment(Department department) {
+//		this.department = department;
+//	}
 	public void setName(String name) {
 		this.name = name;
 	}
